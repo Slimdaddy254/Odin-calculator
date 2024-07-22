@@ -1,0 +1,19 @@
+*, *::before, *::after{ /* styling for all elements*/
+    box-sizing: border-box;
+    font-family: 'Gotham Rounded','Arial Narrow', Arial, sans-serif;
+    font-weight: normal;
+}
+body {
+    /* styling for the background */
+    padding: 0;
+    margin: 0%;
+    background: linear-gradient(to right, rgb(20, 211, 189), rgb(248, 237, 255) );
+}
+.calculator-grid{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
