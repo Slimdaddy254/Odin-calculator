@@ -9,11 +9,43 @@ body {
     margin: 0%;
     background: linear-gradient(to right, rgb(20, 211, 189), rgb(248, 237, 255) );
 }
-.calculator-grid{
+.calculator-grid{ /* Place the buttons on the page */
     display: grid;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     min-height: 100vh;
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+.calculator-grid > button { /* appearance of the buttons */
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid whitesmoke;
+    outline: none;
+    background-color: rgb(240, 255, 255 );
+}
+.calculator-grid > button:hover { /* Color when we hover over the buttons*/
+    background-color: rgba(115, 186, 224, 0.9);
+}
+.span-two { /* for buttons that occupy two boxes */
+    grid-column: span 2;
+}
+.output { /* Position the display output */
+    grid-column: 1 / -1;
+    background-color: rgb(77, 169, 20, .75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.output .previous-operand {
+    color: rgb(255, 255, 255, .9);
+    font-size: 1.5rem;
+}
+.output .current-operand {
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
 }
