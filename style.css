@@ -20,9 +20,9 @@ body {
 .calculator-grid > button { /* appearance of the buttons */
     cursor: pointer;
     font-size: 2rem;
-    border: 1px solid whitesmoke;
+    border: 1px solid rgba(235, 212, 212, .75);
     outline: none;
-    background-color: rgb(240, 255, 255 );
+    background-color: rgb(161, 202, 202);
 }
 .calculator-grid > button:hover { /* Color when we hover over the buttons*/
     background-color: rgba(115, 186, 224, 0.9);
