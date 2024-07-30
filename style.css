@@ -10,7 +10,7 @@
 /* Styling for the background */
 body {
     padding: 0;
-    margin: 0%;
+    margin: 0;
     background-color: rgb(177, 222, 215);
 }
 
@@ -23,7 +23,6 @@ body {
     grid-template-columns: repeat(4, 80px);
     grid-template-rows: minmax(100px, auto) repeat(5, 80px);
     gap: 7px;
-    
 }
 
 /* Appearance of the buttons */
@@ -33,30 +32,51 @@ body {
     border: 1px solid rgb(191, 246, 243);
     outline: none;
     background-color: rgb(255, 255, 255);
-    border-radius: 50px
+    border-radius: 50px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: all 0.2s ease; /* Smooth transition for hover and active states */
+}
+
+/* Color and shadow when hovering over the buttons */
+.calculator-grid > button:hover {
+    background-color: rgba(186, 234, 219, 0.7);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+    transform: translateY(-2px); /* Lift the button slightly */
+}
+
+/* Color and shadow when pressing a button */
+.calculator-grid > button:active {
+    background-color: rgba(186, 234, 219, 0.5); /* Darker color when pressed */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow when pressed */
+    transform: translateY(2px); /* Push the button down slightly */
 }
 
 /* Different color for operator buttons */
 .calculator-grid > button[data-operation] {
     background-color: rgb(39, 105, 63);
-    border: 0px;
+    border: 0;
+    color: white; /* Text color for better contrast */
 }
+
+/* Color and shadow when hovering over operator buttons */
+.calculator-grid > button[data-operation]:hover {
+    background-color: rgba(72, 120, 78, 0.9);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+    transform: translateY(-2px); /* Lift the button slightly */
+}
+
+/* Style for the equals button */
 .calculator-grid > button[data-equals] {
     background-color: rgb(231, 129, 34);
-    border: 0px;
+    border: 0;
+    color: white; /* Text color for better contrast */
 }
 
-/* Color when hovering over the buttons */
-.calculator-grid > button:hover {
-    background-color: rgba(186, 234, 219, 0.7);
-}
-
-/* Color when hovering over operator buttons */
-.calculator-grid > button[data-operation]:hover {
-    background-color: rgba(72, 120, 78, 0.9); /* Change this color as desired */
-}
+/* Color and shadow when hovering over the equals button */
 .calculator-grid > button[data-equals]:hover {
-    background-color: rgba(219, 233, 23, 0.9); /* Change this color as desired */
+    background-color: rgba(219, 233, 23, 0.9);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+    transform: translateY(-2px); /* Lift the button slightly */
 }
 
 /* For buttons that occupy two boxes */
@@ -77,14 +97,12 @@ body {
     word-break: break-all;
     border-radius: 10px;
     margin-bottom: 10px;
+    color: rgb(255, 255, 255);
 }
 
-.output .previous-operand {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 2.0rem;
-}
-
+/* Styling for output text */
+.output .previous-operand,
 .output .current-operand {
     color: rgb(255, 255, 255);
-    font-size: 2.0rem;
+    font-size: 2rem;
 }
