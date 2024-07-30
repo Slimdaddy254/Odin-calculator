@@ -1,38 +1,73 @@
-*, *::before, *::after{ /* styling for all elements*/
+/* Styling for all elements */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
-    font-family: 'Gotham Rounded','Arial Narrow', Arial, sans-serif;
+    font-family: 'Gotham Rounded', 'Arial Narrow', Arial, sans-serif;
     font-weight: normal;
 }
+
+/* Styling for the background */
 body {
-    /* styling for the background */
     padding: 0;
     margin: 0%;
-    background: linear-gradient(to right, rgb(20, 211, 189), rgb(248, 237, 255) );
+    background-color: rgb(177, 222, 215);
 }
-.calculator-grid{ /* Place the buttons on the page */
+
+/* Place the buttons on the page */
+.calculator-grid {
     display: grid;
     justify-content: center;
     align-content: center;
     min-height: 100vh;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+    gap: 7px;
+    
 }
-.calculator-grid > button { /* appearance of the buttons */
+
+/* Appearance of the buttons */
+.calculator-grid > button {
     cursor: pointer;
     font-size: 2rem;
-    border: 1px solid rgba(235, 212, 212, .75);
+    border: 1px solid rgb(191, 246, 243);
     outline: none;
-    background-color: rgb(161, 202, 202);
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px
 }
-.calculator-grid > button:hover { /* Color when we hover over the buttons*/
-    background-color: rgba(115, 186, 224, 0.9);
+
+/* Different color for operator buttons */
+.calculator-grid > button[data-operation] {
+    background-color: rgb(39, 105, 63);
+    border: 0px;
 }
-.span-two { /* for buttons that occupy two boxes */
+.calculator-grid > button[data-equals] {
+    background-color: rgb(231, 129, 34);
+    border: 0px;
+}
+
+/* Color when hovering over the buttons */
+.calculator-grid > button:hover {
+    background-color: rgba(186, 234, 219, 0.7);
+}
+
+/* Color when hovering over operator buttons */
+.calculator-grid > button[data-operation]:hover {
+    background-color: rgba(72, 120, 78, 0.9); /* Change this color as desired */
+}
+.calculator-grid > button[data-equals]:hover {
+    background-color: rgba(219, 233, 23, 0.9); /* Change this color as desired */
+}
+
+/* For buttons that occupy two boxes */
+.span-two {
     grid-column: span 2;
 }
-.output { /* Position the display output */
+
+/* Position the display output */
+.output {
     grid-column: 1 / -1;
-    background-color: rgb(77, 169, 20, .75);
+    background-color: rgba(39, 105, 63);
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
@@ -40,12 +75,16 @@ body {
     padding: 10px;
     word-wrap: break-word;
     word-break: break-all;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
+
 .output .previous-operand {
-    color: rgb(255, 255, 255, .9);
-    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 2.0rem;
 }
+
 .output .current-operand {
     color: rgb(255, 255, 255);
-    font-size: 1.5rem;
+    font-size: 2.0rem;
 }
